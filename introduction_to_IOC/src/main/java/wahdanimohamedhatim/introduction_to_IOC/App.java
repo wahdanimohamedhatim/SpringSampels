@@ -4,21 +4,23 @@ package wahdanimohamedhatim.introduction_to_IOC;
  * Hello world!
  *
  */
-public class App implements IAPP
-{
+public class App implements IAPP {
+
 	
-	int i;
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-        Class appReflectedClassFactory=null;
+
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+		Class appReflectedClassFactory = null;
+		String appFullClassName = "wahdanimohamedhatim.introduction_to_IOC.App";
+		
 		try {
-			appReflectedClassFactory = Class.forName("wahdanimohamedhatim.introduction_to_IOC.App");
+			appReflectedClassFactory = Class.forName(appFullClassName);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        try {
+		
+		try {
 			IAPP appReflectedClass = (App) appReflectedClassFactory.newInstance();
 			appReflectedClass.doSomeThing();
 		} catch (InstantiationException e) {
@@ -28,9 +30,10 @@ public class App implements IAPP
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        
-    }
-    public void doSomeThing(){
+
+	}
+
+	public void doSomeThing() {
 		System.out.println("Someting done by App class");
 	}
 
