@@ -16,15 +16,15 @@ public class App {
 		System.out.println("Hello World!");
 		// Chargement de context d'application à partir du file systeme
 		System.out.println("SpringContextXmlConfigFileOutOfClassPath Loading!");
-		ApplicationContext contextFileSystem = new FileSystemXmlApplicationContext(
-				"file:C:/GIT/SpringSampels/SpringIoCContainer/SpringContextXmlConfigFileOutOfClassPath.xml");
+//		ApplicationContext contextFileSystem = new FileSystemXmlApplicationContext(
+//				"file:C:/GIT/SpringSampels/SpringIoCContainer/SpringContextXmlConfigFileOutOfClassPath.xml");
 		System.out.println("SpringContextXmlConfigFileInClassPath Loading!");
 		
 		// Chargement de context d'application à partir du ClassPath
 		ApplicationContext contextClassPath = new ClassPathXmlApplicationContext(
 				"SpringContextXmlConfigFileInClassPath.xml");
 
-		IPersonne personne = (IPersonne) contextClassPath.getBean("aBean");
+		IPersonne personne = (IPersonne) contextClassPath.getBean("aBean1");
 
 		personne.sayHello();
 
@@ -33,29 +33,29 @@ public class App {
 		// pour chaque Bean Spring Par defaut cree un Singleton de la class  correspondante !!! 
 		// vous pouvez essayer de changer les valeurs à chaux, vous remarquerez
 		// que les valeurs affichiées ne changent pas
-		System.out.println("Ouverture du listner");
-		int keyCode = 0;
-		while (keyCode != 32) {
-			keyCode = System.in.read();
-			System.out.println(keyCode);
-			personne.sayHello();
-		}
-		System.out.println("Arret du listner");
-		ApplicationContext contextClassPath2 = new ClassPathXmlApplicationContext(
-				"SpringContextXmlConfigFileInClassPath.xml");
-		IPersonne personne2 = (IPersonne) contextClassPath2.getBean("aBean");
-		personne.sayHello();
-		personne2.sayHello();
-
-		personne.changeMyFName(" personne Hatim");
-
-		personne.sayHello();
-		personne2.sayHello();
-
-		personne2.changeMyFName(" personne2 Mohamed");
-
-		personne.sayHello();
-		personne2.sayHello();
+//		System.out.println("Ouverture du listner");
+//		int keyCode = 0;
+//		while (keyCode != 32) {
+//			keyCode = System.in.read();
+//			System.out.println(keyCode);
+//			personne.sayHello();
+//		}
+//		System.out.println("Arret du listner");
+//		ApplicationContext contextClassPath2 = new ClassPathXmlApplicationContext(
+//				"SpringContextXmlConfigFileInClassPath.xml");
+//		IPersonne personne2 = (IPersonne) contextClassPath2.getBean("aBean");
+//		personne.sayHello();
+//		personne2.sayHello();
+//
+//		personne.changeMyFName(" personne Hatim");
+//
+//		personne.sayHello();
+//		personne2.sayHello();
+//
+//		personne2.changeMyFName(" personne2 Mohamed");
+//
+//		personne.sayHello();
+//		personne2.sayHello();
 		
 		
 
