@@ -21,7 +21,7 @@ public class App implements IAPP {
 		}
 		
 		try {
-			IAPP appReflectedClass = (App) appReflectedClassFactory.newInstance();
+			IAPP appReflectedClass = (IAPP) appReflectedClassFactory.newInstance();
 			appReflectedClass.doSomeThing();
 		} catch (InstantiationException e) {
 			// TODO Auto-generated catch block
