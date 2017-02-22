@@ -27,7 +27,10 @@ public class App {
 		IPersonne personne = (IPersonne) contextClassPath.getBean("aBean1");
 
 		personne.sayHello();
-
+		IVoiture voiture = (IVoiture) contextClassPath.getBean("voiture");
+		
+		System.out.println("Ma voiture : " + voiture.toString());
+		
 		// le bean et les valeurs de ses proprieetées sont chargé une fois lors
 		// du chargement du context Spring
 		// pour chaque Bean Spring Par defaut cree un Singleton de la class  correspondante !!! 

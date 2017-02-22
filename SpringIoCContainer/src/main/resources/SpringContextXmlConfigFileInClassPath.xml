@@ -9,16 +9,34 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 
 		<constructor-arg value="Mohamed Hatim" index="1" />
 		<constructor-arg value="WAHDANI" index="0" />
-		 <constructor-arg index="2"><null/></constructor-arg> 
-		
+		<constructor-arg index="2">
+			<null />
+		</constructor-arg>
+
 	</bean>
-	
-	  <bean id="aBean1"
+
+	<bean id="aBean1"
 		class="wahdanimohamedhatim.SpringIoCContainer.plugin.v1.PersonneImpl">
 		<property name="fName" value="Mohamed" />
 		<property name="lName" value="WAHDANI" />
-		<property name="ami"  ref="aBean"/>
-	</bean> 
-	
+		<property name="ami" ref="aBean" />
+	</bean>
+
+	<bean id="voiture"
+		class="wahdanimohamedhatim.SpringIoCContainer.plugin.v1.VoitureImpl" autowire="byType">
+
+		 <constructor-arg value="5" index="0" />
+	<!--	<constructor-arg index="1" ref="moteur" />
+ -->
+ 
+ <!-- <property name="nbrPorte"><value>5</value></property>
+  -->
+	</bean>
+	<bean id="moteur"
+		class="wahdanimohamedhatim.SpringIoCContainer.plugin.v1.MoteurImpl">
+	<!-- 	<constructor-arg value="2" index="0" /> -->
+ <property name="nbrLitre"><value>2</value></property>
+
+	</bean>
 
 </beans>
