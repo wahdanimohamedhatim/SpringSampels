@@ -34,7 +34,7 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 	</bean>
 	<bean id="moteur"
 		class="wahdanimohamedhatim.SpringIoCContainer.plugin.v1.MoteurImpl">
-	<!-- 	<constructor-arg value="2" index="0" /> -->
+ 	<constructor-arg value="7" index="0" /> 
  <property name="nbrLitre"><value>2</value></property>
 
 	</bean>
